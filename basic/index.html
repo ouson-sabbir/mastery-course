@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js</title>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #13203b 0%, #050816 60%, #02030a 100%);
+      color: #e2e8f0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .label {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      padding: 10px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .hint {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1;
+      max-width: 280px;
+      padding: 12px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="label">Three.js Basic Starter</div>
+  <div class="hint">
+    Edit <strong>script.js</strong> to change the cube, camera, lights, and animation.
+  </div>
+
+  <script src="https://unpkg.com/three/build/three.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
