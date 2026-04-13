@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Materials Masterclass</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --panel: rgba(10, 18, 31, 0.84);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --accent: #8fd3ff;
+      --muted: #bcd0df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(76, 112, 148, 0.35), transparent 35%),
+        linear-gradient(180deg, #09111b 0%, #05070b 100%);
+      color: #f3f7fb;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .panel {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      width: min(360px, calc(100vw - 32px));
+      padding: 18px 18px 16px;
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .panel h1 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .panel p {
+      margin: 0 0 10px;
+      line-height: 1.55;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .panel strong {
+      color: #fff;
+    }
+
+    .legend {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 12px;
+      font-size: 0.87rem;
+      color: #dbe9f4;
+    }
+
+    .legend li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--panel-border);
+      font-size: 0.82rem;
+      color: #9fb6c7;
+    }
+
+    @media (max-width: 720px) {
+      .panel {
+        width: calc(100vw - 24px);
+        top: 12px;
+        left: 12px;
+        padding: 14px;
+      }
+
+      .legend {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="panel">
+    <h1>Three.js Materials Masterclass</h1>
+    <p>
+      This scene is a mini showroom. It demonstrates how
+      <strong>light-reactive</strong>, <strong>stylized</strong>, and
+      <strong>special-purpose</strong> materials behave in one place.
+    </p>
+    <p>
+      Drag to orbit, scroll to zoom, and compare how each object responds to the same lighting setup.
+    </p>
+    <ul class="legend">
+      <li>MeshBasicMaterial</li>
+      <li>MeshLambertMaterial</li>
+      <li>MeshPhongMaterial</li>
+      <li>MeshStandardMaterial</li>
+      <li>MeshPhysicalMaterial</li>
+      <li>MeshToonMaterial</li>
+      <li>MeshNormalMaterial</li>
+      <li>MeshMatcapMaterial</li>
+      <li>MeshDepthMaterial</li>
+      <li>PointsMaterial</li>
+      <li>LineBasicMaterial</li>
+      <li>LineDashedMaterial</li>
+      <li>SpriteMaterial</li>
+      <li>ShadowMaterial</li>
+    </ul>
+    <div class="footer">
+      Open <code>materials/materials-lecture.md</code> for the full teaching notes and
+      <code>materials/practice.js</code> for student exercises.
+    </div>
+  </aside>
+
+  <canvas class="webgl"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

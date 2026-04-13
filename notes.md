@@ -12,3 +12,10 @@
 - Replace `BoxGeometry` with `SphereGeometry`.
 - Comment out the helpers to see a cleaner scene.
 - Slow down or speed up the cube rotation.
+
+## Materials Lecture Upgrade
+
+- Open `materials/index.html` for the full materials demo scene.
+- Open `materials/practice.html` for guided hands-on exercises.
+- Read `materials/materials-lecture.md` for the complete teaching breakdown.
+- Read `note.md` for a Bengali speaking script you can use directly in class.

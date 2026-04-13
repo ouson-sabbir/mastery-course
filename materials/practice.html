@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Materials Practice</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background: #05070b;
+      color: #f8fafc;
+    }
+
+    .instructions {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      width: min(360px, calc(100vw - 32px));
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(7, 11, 18, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      line-height: 1.55;
+    }
+
+    .instructions h1 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .instructions ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="instructions">
+    <h1>Practice Tasks</h1>
+    <ul>
+      <li>Change `MeshStandardMaterial` roughness and metalness.</li>
+      <li>Convert the center object to `MeshPhongMaterial`.</li>
+      <li>Make the glass sphere thicker with more transmission.</li>
+      <li>Turn on wireframe for one object.</li>
+      <li>Try `DoubleSide` on the ring and compare the result.</li>
+    </ul>
+  </div>
+
+  <canvas class="webgl"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="practice.js"></script>
+</body>
+</html>
