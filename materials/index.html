@@ -3,139 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three.js Materials Masterclass</title>
+  <title>Three.js Materials Learning Hub</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --panel: rgba(10, 18, 31, 0.84);
-      --panel-border: rgba(255, 255, 255, 0.12);
-      --accent: #8fd3ff;
-      --muted: #bcd0df;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      overflow: hidden;
       font-family: "Segoe UI", sans-serif;
+      color: #eff6ff;
       background:
-        radial-gradient(circle at top, rgba(76, 112, 148, 0.35), transparent 35%),
-        linear-gradient(180deg, #09111b 0%, #05070b 100%);
-      color: #f3f7fb;
+        radial-gradient(circle at top, rgba(72, 115, 153, 0.35), transparent 34%),
+        linear-gradient(180deg, #08111c 0%, #04070b 100%);
     }
-
-    canvas {
+    .page {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+    .hero {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(8, 15, 26, 0.82);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .hero h1 { margin: 0 0 10px; font-size: 2rem; }
+    .hero p { margin: 0 0 10px; color: #cddaea; line-height: 1.6; }
+    .toolbar, .grid { display: grid; gap: 14px; }
+    .toolbar {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 18px;
+    }
+    .card, .action {
       display: block;
-    }
-
-    .panel {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      width: min(360px, calc(100vw - 32px));
-      padding: 18px 18px 16px;
-      border: 1px solid var(--panel-border);
+      text-decoration: none;
+      color: inherit;
+      padding: 16px;
       border-radius: 18px;
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
     }
-
-    .panel h1 {
-      margin: 0 0 8px;
-      font-size: 1.4rem;
-      letter-spacing: 0.03em;
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 20px;
     }
-
-    .panel p {
-      margin: 0 0 10px;
-      line-height: 1.55;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .panel strong {
-      color: #fff;
-    }
-
-    .legend {
-      margin: 14px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px 12px;
-      font-size: 0.87rem;
-      color: #dbe9f4;
-    }
-
-    .legend li::before {
-      content: "• ";
-      color: var(--accent);
-    }
-
-    .footer {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--panel-border);
-      font-size: 0.82rem;
-      color: #9fb6c7;
-    }
-
-    @media (max-width: 720px) {
-      .panel {
-        width: calc(100vw - 24px);
-        top: 12px;
-        left: 12px;
-        padding: 14px;
-      }
-
-      .legend {
-        grid-template-columns: 1fr;
-      }
-    }
+    .card strong, .action strong { display: block; margin-bottom: 6px; font-size: 1rem; }
+    .card span, .action span { color: #c8d8e8; line-height: 1.5; font-size: 0.92rem; }
   </style>
 </head>
 <body>
-  <aside class="panel">
-    <h1>Three.js Materials Masterclass</h1>
-    <p>
-      This scene is a mini showroom. It demonstrates how
-      <strong>light-reactive</strong>, <strong>stylized</strong>, and
-      <strong>special-purpose</strong> materials behave in one place.
-    </p>
-    <p>
-      Drag to orbit, scroll to zoom, and compare how each object responds to the same lighting setup.
-    </p>
-    <ul class="legend">
-      <li>MeshBasicMaterial</li>
-      <li>MeshLambertMaterial</li>
-      <li>MeshPhongMaterial</li>
-      <li>MeshStandardMaterial</li>
-      <li>MeshPhysicalMaterial</li>
-      <li>MeshToonMaterial</li>
-      <li>MeshNormalMaterial</li>
-      <li>MeshMatcapMaterial</li>
-      <li>MeshDepthMaterial</li>
-      <li>PointsMaterial</li>
-      <li>LineBasicMaterial</li>
-      <li>LineDashedMaterial</li>
-      <li>SpriteMaterial</li>
-      <li>ShadowMaterial</li>
-    </ul>
-    <div class="footer">
-      Open <code>materials/materials-lecture.md</code> for the full teaching notes and
-      <code>materials/practice.js</code> for student exercises.
-    </div>
-  </aside>
+  <main class="page">
+    <section class="hero">
+      <h1>Three.js Materials Learning Hub</h1>
+      <p>Each material now has its own folder, its own focused example, and its own separate note file so you can teach one topic at a time without a giant code file.</p>
+      <p>Recommended class flow: open one lesson, explain the note, show the small example, then finish with the final showroom for comparison.</p>
 
-  <canvas class="webgl"></canvas>
+      <div class="toolbar">
+        <a class="action" href="./materials-lecture.md">
+          <strong>Master Overview</strong>
+          <span>Full lecture summary of all materials.</span>
+        </a>
+        <a class="action" href="./practice.html">
+          <strong>Practice Scene</strong>
+          <span>Hands-on exercise file for students.</span>
+        </a>
+        <a class="action" href="./final-showroom/index.html">
+          <strong>Final Showroom</strong>
+          <span>Use this at the end for a big recap.</span>
+        </a>
+      </div>
+    </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="script.js"></script>
+    <section class="grid">
+      <a class="card" href="./mesh-basic/index.html"><strong>MeshBasicMaterial</strong><span>No light reaction. Best for simple objects and wireframe.</span></a>
+      <a class="card" href="./mesh-lambert/index.html"><strong>MeshLambertMaterial</strong><span>Simple matte lighting without shiny highlights.</span></a>
+      <a class="card" href="./mesh-phong/index.html"><strong>MeshPhongMaterial</strong><span>Classic shiny highlights and specular control.</span></a>
+      <a class="card" href="./mesh-standard/index.html"><strong>MeshStandardMaterial</strong><span>Realistic PBR material with roughness and metalness.</span></a>
+      <a class="card" href="./mesh-physical/index.html"><strong>MeshPhysicalMaterial</strong><span>Advanced realistic glass and premium surfaces.</span></a>
+      <a class="card" href="./mesh-toon/index.html"><strong>MeshToonMaterial</strong><span>Stylized cartoon-like shading.</span></a>
+      <a class="card" href="./mesh-normal/index.html"><strong>MeshNormalMaterial</strong><span>Shows normal direction using color.</span></a>
+      <a class="card" href="./mesh-matcap/index.html"><strong>MeshMatcapMaterial</strong><span>Fake baked lighting using a matcap texture.</span></a>
+      <a class="card" href="./mesh-depth/index.html"><strong>MeshDepthMaterial</strong><span>Visualize depth from the camera.</span></a>
+      <a class="card" href="./mesh-distance/index.html"><strong>MeshDistanceMaterial</strong><span>Distance-based rendering for advanced effects.</span></a>
+      <a class="card" href="./shadow-material/index.html"><strong>ShadowMaterial</strong><span>Invisible receiver that only shows shadows.</span></a>
+      <a class="card" href="./line-basic/index.html"><strong>LineBasicMaterial</strong><span>Solid color line rendering.</span></a>
+      <a class="card" href="./line-dashed/index.html"><strong>LineDashedMaterial</strong><span>Dashed line rendering with dash size and gap size.</span></a>
+      <a class="card" href="./points-material/index.html"><strong>PointsMaterial</strong><span>Particles and point cloud rendering.</span></a>
+      <a class="card" href="./sprite-material/index.html"><strong>SpriteMaterial</strong><span>Camera-facing label or icon material.</span></a>
+      <a class="card" href="./shader-material/index.html"><strong>ShaderMaterial</strong><span>Custom GLSL with Three.js support.</span></a>
+      <a class="card" href="./raw-shader-material/index.html"><strong>RawShaderMaterial</strong><span>Full raw shader control for advanced lessons.</span></a>
+    </section>
+  </main>
 </body>
 </html>

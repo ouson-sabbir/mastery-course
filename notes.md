@@ -15,7 +15,10 @@
 
 ## Materials Lecture Upgrade
 
-- Open `materials/index.html` for the full materials demo scene.
+- Open `materials/index.html` for the new materials learning hub.
+- Open a single material folder like `materials/mesh-standard/index.html` for a focused lesson.
+- Open `materials/notes/` for short separate note files per material.
 - Open `materials/practice.html` for guided hands-on exercises.
+- Open `materials/final-showroom/index.html` for the final recap scene.
 - Read `materials/materials-lecture.md` for the complete teaching breakdown.
 - Read `note.md` for a Bengali speaking script you can use directly in class.

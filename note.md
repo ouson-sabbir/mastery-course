@@ -220,3 +220,30 @@ Task:
 ## Tomorrow class-এর জন্য short closing line
 
 `আজকের lecture থেকে তোমরা মনে রাখবে, geometry shape দেয়, কিন্তু material personality দেয়। তাই Three.js এ material বুঝতে পারা মানে rendering-এর অর্ধেক জয় করা।`
+
+## নতুন teaching flow
+
+আমি এখন lesson hub থেকে এক এক করে folder open করব।
+
+Suggested order:
+
+1. `materials/mesh-basic/index.html`
+2. `materials/mesh-lambert/index.html`
+3. `materials/mesh-phong/index.html`
+4. `materials/mesh-standard/index.html`
+5. `materials/mesh-physical/index.html`
+6. `materials/mesh-toon/index.html`
+7. `materials/mesh-normal/index.html`
+8. `materials/mesh-matcap/index.html`
+9. `materials/mesh-depth/index.html`
+10. `materials/mesh-distance/index.html`
+11. `materials/shadow-material/index.html`
+12. `materials/line-basic/index.html`
+13. `materials/line-dashed/index.html`
+14. `materials/points-material/index.html`
+15. `materials/sprite-material/index.html`
+16. `materials/shader-material/index.html`
+17. `materials/raw-shader-material/index.html`
+18. শেষে `materials/final-showroom/index.html`
+
+প্রতিটি lesson-এর note file আছে `materials/notes/` folder-এ।

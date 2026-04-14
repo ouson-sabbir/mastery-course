@@ -5,7 +5,7 @@ This repository is a beginner-friendly Three.js learning workspace.
 ## Current Lesson
 
 - `basic/` contains a simple Three.js starter project
-- `materials/` contains a full materials masterclass with a realistic demo and practice file
+- `materials/` is now a learning hub with one folder per material, separate note files, a practice scene, and a final showroom
 - `notes.md` includes quick learning notes
 - `note.md` includes a ready-to-speak Bengali lecture script for materials
 - `topics.md` lists the concepts to study next
@@ -25,6 +25,7 @@ Then open:
 - `basic/index.html`
 - `materials/index.html`
 - `materials/practice.html`
+- `materials/final-showroom/index.html`
 
 ## What You Will Learn
 
@@ -36,3 +37,4 @@ Then open:
 - scene hierarchy
 - material families and property choices
 - realistic vs stylized shading
+- one-topic-at-a-time material lessons
