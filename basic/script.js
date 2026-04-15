@@ -14,6 +14,9 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 camera.position.z = 5;
+camera.position.x = 1;
+camera.position.y = 1;
+
 
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -23,8 +26,8 @@ function animate() {
   renderer.render(scene, camera);
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
-  cube.rotation.z += 0.01;
+  cube.rotation.z += 1;
 }
 
-// renderer.render(scene, camera);
+renderer.render(scene, camera);
 renderer.setAnimationLoop(animate);
